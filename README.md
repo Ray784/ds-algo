@@ -6,3 +6,4 @@ All DS required for competitive programming
 3. FloydWarshall - all pairs shortest path
 4. FordFulkerson - max Flow
 5. SuffixTree - a trie of chars - checks if suffix of the current string is part of the trie(dictionary).
+6. xor_cipher - decrypter for an XOR cipher
