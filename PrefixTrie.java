@@ -1,12 +1,12 @@
-public class SuffixTrie {
+public class PrefixTrie {
     private CharTrieNode root;
-    SuffixTrie() {
+    PrefixTrie() {
         root = new CharTrieNode();
     }
 
     public void insert(String s) {
         CharTrieNode temp = root;
-        for(int i = s.length() - 1; i >= 0; i--) {
+        for(int i = 0; i < s.length(); i++) {
             int key = s.charAt(i) - 'a';
             if(temp.nodes[key] == null)
                 temp.nodes[key] = new CharTrieNode();
@@ -19,7 +19,7 @@ public class SuffixTrie {
         CharTrieNode temp = root;
         if(root == null)
             return false;
-        for(int i = s.length() - 1; i >= 0; i--) {
+        for(int i = 0; i < s.length(); i++) {
             int key = s.charAt(i) - 'a';
             if(temp.nodes[key] == null)
                 return false;
