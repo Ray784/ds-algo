@@ -1,5 +1,6 @@
-// max flow
+package com.java.dsa.graphs;
 
+// max flow
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;

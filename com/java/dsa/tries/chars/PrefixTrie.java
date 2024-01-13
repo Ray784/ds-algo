@@ -1,3 +1,5 @@
+package com.java.dsa.tries.chars;
+
 public class PrefixTrie {
     private CharTrieNode root;
     PrefixTrie() {
@@ -28,14 +30,5 @@ public class PrefixTrie {
                 return true;
         }
         return false;
-    }
-}
-
-class CharTrieNode {
-    CharTrieNode[] nodes;
-    boolean end;
-    CharTrieNode() {
-        nodes = new CharTrieNode[26];
-        end = false;
     }
 }

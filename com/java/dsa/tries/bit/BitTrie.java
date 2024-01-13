@@ -1,14 +1,4 @@
-import java.util.*;
-
-class BitTrieNode {
-    BitTrieNode nodes[];
-    BitTrieNode() {
-        nodes = new BitTrieNode[2];
-    }
-    public String toString() {
-        return Arrays.toString(nodes);
-    }
-}
+package com.java.dsa.tries.bit;
 
 public class BitTrie {
     BitTrieNode root;
@@ -18,11 +8,12 @@ public class BitTrie {
     }
     
     public void insert(int val) {
-        // System.out.println("insert: " + val);
-        int mask = power, bit;
+        int mask = power;
         BitTrieNode temp = root;
         while(mask >= 0) {
-            bit = (val >> mask) & 1;
+            // get the current bit
+            int bit = (val >> mask) & 1;
+            // set the bit in the trie
             if(temp.nodes[bit] == null)
                 temp.nodes[bit] = new BitTrieNode();
             temp = temp.nodes[bit];
@@ -31,13 +22,12 @@ public class BitTrie {
     }
     
     public int getXorMax(int val) {
-        // System.out.println("max: " + val);
-        int mask = power, bit, opp;
+        int mask = power;
         BitTrieNode temp = root;
         int res = 0;
         while(mask >= 0) {
-            bit = (val >> mask) & 1;
-            opp = bit ^ 1;
+            int bit = (val >> mask) & 1;
+            int opp = bit ^ 1;
             res <<= 1;
             if(temp == null)
                 return -1;
@@ -55,13 +45,12 @@ public class BitTrie {
     }
     
     public void remove(int val) {
-        // System.out.println("remove: " + val);
-        int mask = power, bit;
+        int mask = power;
         BitTrieNode temp = root;
         BitTrieNode rem = root;
         int cb = 0;
         while(mask >= 0) {
-            bit = (val >> mask) & 1;
+            int bit = (val >> mask) & 1;
             if(temp.nodes[bit] == null)
                 return;
             if(temp.nodes[0] != null && temp.nodes[1] != null){

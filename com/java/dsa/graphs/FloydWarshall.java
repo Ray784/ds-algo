@@ -1,3 +1,4 @@
+package com.java.dsa.graphs;
 // all pairs shortest path
 class FloydWarshall {
     public int[][] allPairsShortestPath(int[][] graph) {

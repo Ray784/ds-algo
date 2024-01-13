@@ -1,12 +1,14 @@
-public class SuffixTrie {
+package com.java.dsa.tries.chars;
+
+public class CharTrie {
     private CharTrieNode root;
-    SuffixTrie() {
+    CharTrie() {
         root = new CharTrieNode();
     }
 
     public void insert(String s) {
         CharTrieNode temp = root;
-        for(int i = s.length() - 1; i >= 0; i--) {
+        for(int i = 0; i < s.length(); i++) {
             int key = s.charAt(i) - 'a';
             if(temp.nodes[key] == null)
                 temp.nodes[key] = new CharTrieNode();
@@ -19,23 +21,12 @@ public class SuffixTrie {
         CharTrieNode temp = root;
         if(root == null)
             return false;
-        for(int i = s.length() - 1; i >= 0; i--) {
+        for(int i = 0; i < s.length(); i++) {
             int key = s.charAt(i) - 'a';
             if(temp.nodes[key] == null)
                 return false;
             temp = temp.nodes[key];
-            if(temp.end)
-                return true;
         }
-        return false;
-    }
-}
-
-class CharTrieNode {
-    CharTrieNode[] nodes;
-    boolean end;
-    CharTrieNode() {
-        nodes = new CharTrieNode[26];
-        end = false;
+        return temp.end;
     }
 }
